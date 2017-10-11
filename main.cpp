@@ -14,15 +14,21 @@
 
 using std::string;
 using std::valarray;
+using namespace std;
 
 
 int main()
 {
     
+    
+    float Total_Lift;
     // all weights in gm
     
+    Vehicle_Dynamics my_drone; // instantiate obj. my_drone of class Vechicle_Dynamics
     
-     int air_frame = 140;
+    my_drone.Initialize();  // inialize all drone parts weights
+    
+     /*int air_frame = 140;
      int motor_wt = 96;  // 4x24
      int props = 80;
      int ESC = 40;
@@ -33,10 +39,10 @@ int main()
      float FCC = 43; // Flight control computer  */
     
     
-    Vehicle_Dynamics::Calculate_AUW(int air_frame, int motor_wt, int props, int ESC, int bat, int PDU, int Radio, \
-                                    int total_lift, int FCC, float AUW);
+    my_drone.Calculate_AUW (int air_frame, int motor_wt, int props, int ESC, int bat, int PDU, int Radio, \
+                            int total_lift, int FCC, float AUW);
     
-
+    cout << "All Up Lift =" << AUW;
     
     return 0;
 }
